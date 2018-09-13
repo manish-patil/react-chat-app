@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
 import newChatCreated from "../actions/newChatCreated";
+import ChatBox from "./ChatBox";
 
 class MessagePanel extends React.Component<any, any> {
     private txtChat;
@@ -47,20 +48,18 @@ class MessagePanel extends React.Component<any, any> {
     render() {
         return (
             <div className="appPanelOld">
-                <div>
-                    {this.props.user.firstName + " " + this.props.user.lastName}
-                </div>
                 <div className="messagesPanel">
-                    <h3>Chats - {this.props.chats.length}</h3>
-                    <ul>
-                        {console.log("Message Panel - Render()")}
+                    <div>
                         {
                             this.props.chats && this.props.chats.length > 0 &&
                             this.props.chats.map((chat, idx) => {
-                                return <li key={"_" + idx}>{chat.messageType + "-" + chat.chatMessage}</li>
+                                return <ChatBox key={"_" + idx} userInitials={chat.user.initials}
+                                    messageType={chat.messageType}
+                                    chatMessage={chat.chatMessage}
+                                    chatMessageSentAt={chat.chatMessageSentAt.toLocaleString()} />
                             })
                         }
-                    </ul>
+                    </div>
                 </div>
                 <div className="messagePanel">
                     <div className="row">

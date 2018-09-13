@@ -8,6 +8,3 @@ export default function newUserLoggedIn(user) {
         }
     )
 }
-
-// NEW_USER_CONNECTED
-// 	NEW_USER_RECEIVED  - Event received to Client - Update Store

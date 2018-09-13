@@ -99,3 +99,74 @@ div .container, html, body {
     padding: .5em;
     color: black;
 }
+
+.chatbox {
+    display: flex;
+}
+
+.chatbox-left {
+    flex-direction: row;
+}
+
+.chatbox-right {
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+    background-color: black;
+    color: red;
+    text-align: center;
+    line-height: 5rem;
+    font-family: impact, sans-serif;
+    font-size: 2.5rem;
+}
+
+.empty-avatar {
+    width: 5rem;
+    height: 5rem;
+}
+
+.bubble-left {
+    flex: 1;
+    padding-left: .5rem;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    align-items: flex-start;
+}
+
+.bubble-right {
+    flex: 1;
+    padding-right: .5rem;
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.bubble {
+    max-width: 75%;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    font-family: arial, sans-serif;
+    font-size: 1em;
+}
+
+.chat-delivery {
+    padding-top: .2rem;
+    font-family: arial, sans-serif;
+    font-size: .75em
+}
+
+.bubble-left>div {
+    border-radius: 2px 25px 25px 25px;
+}
+
+.bubble-right>div {
+    border-radius: 25px 2px 25px 25px;
+}

@@ -28,7 +28,6 @@ class Login extends React.Component<any, any>{
         if (firstName.length > 0) {
             if (lastName.length > 0) {
                 this.props.login({ firstName: firstName, lastName: lastName })
-                // this.props.history.push("/chat");
                 this.setState({ toChat: true });
             } else {
                 this.txtLastName.current.focus();
@@ -46,10 +45,10 @@ class Login extends React.Component<any, any>{
         return (
             <div className="loginPanel">
                 <div style={{ padding: ".5em" }}>
-                    <input type="text" ref={this.txtFirstName} placeholder="Enter First Name" className="input-text" value="Manish" />
+                    <input type="text" ref={this.txtFirstName} placeholder="Enter First Name" className="input-text" />
                 </div>
                 <div style={{ padding: ".5em" }}>
-                    <input type="text" ref={this.txtLastName} placeholder="Enter Last Name" className="input-text" value="Patil" />
+                    <input type="text" ref={this.txtLastName} placeholder="Enter Last Name" className="input-text" />
                 </div>
                 <div style={{ padding: ".5em" }}>
                     <button onClick={this.login} className="login-button">Login</button>
@@ -80,4 +79,3 @@ const mapDispatchToProps = (dispatch) => {
 
 // export default withRouter(Login);
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
-// export default Login;
